@@ -1,5 +1,3 @@
-# Circles in Motion
-
 **Circles in Motion** is an evolving movement practice grounded in the principle of circular return.
 
 Every motion extends outward and returns to center.  
