@@ -5,7 +5,7 @@ Strikes do not terminate in tension; they flow back into the body.
 Steps spiral rather than collide.  
 Breath and posture remain integrated throughout.
 
-Energy flows like water — never trapped, never forced, always in motion, even when still.
+Energy flows like water — never trapped, never forced, always in motion, always able to move again.
 
 ## Framework
 
