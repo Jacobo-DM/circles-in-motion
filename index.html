@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circles in Motion</title>
+  <meta name="description" content="A movement practice rooted in circles, rhythm, breath, and return. No performance required. Begin where you are.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper:   #f7f3ec;
+      --ink:     #2a2520;
+      --muted:   #7a7068;
+      --breath:  #c8bfb0;
+      --moss:    #5a6b52;
+      --water:   #4a6275;
+      --earth:   #8b6f5c;
+      --line:    rgba(42, 37, 32, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+      /* subtle paper texture via noise */
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+    }
+
+    /* ── Circle mark ── */
+    .mark {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: arrive 1.2s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .mark circle {
+      fill: none;
+      stroke: var(--moss);
+      stroke-width: 1.5;
+      stroke-dasharray: 120;
+      stroke-dashoffset: 120;
+      animation: draw-circle 1.4s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    /* ── Opening ── */
+    .opening {
+      opacity: 0;
+      animation: arrive 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .site-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      margin-bottom: 1.4rem;
+      color: var(--ink);
+    }
+
+    .opening-body {
+      font-size: 1.05rem;
+      color: var(--ink);
+      max-width: 520px;
+      margin-bottom: 0.6rem;
+    }
+
+    .opening-body + .opening-body {
+      margin-top: 0.5rem;
+    }
+
+    /* ── Divider ── */
+    .breath-line {
+      width: 40px;
+      height: 1px;
+      background: var(--breath);
+      margin: 2.8rem 0;
+      opacity: 0;
+      animation: arrive 1s ease forwards;
+      animation-delay: 1s;
+    }
+
+    /* ── Orientation ── */
+    .orientation {
+      opacity: 0;
+      animation: arrive 1s ease forwards;
+      animation-delay: 1.1s;
+    }
+
+    .orientation p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    .orientation p + p {
+      margin-top: 0.9rem;
+    }
+
+    /* ── Branches ── */
+    .branches {
+      margin-top: 3.5rem;
+      opacity: 0;
+      animation: arrive 1s ease forwards;
+      animation-delay: 1.4s;
+    }
+
+    .branches-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--breath);
+      margin-bottom: 1.8rem;
+    }
+
+    .branch {
+      display: flex;
+      gap: 1.4rem;
+      align-items: flex-start;
+      padding: 1.4rem 0;
+      border-top: 1px solid var(--line);
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s ease;
+    }
+
+    .branch:last-of-type {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .branch:hover {
+      opacity: 0.7;
+    }
+
+    .branch-glyph {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      margin-top: 0.15rem;
+    }
+
+    .branch-glyph circle,
+    .branch-glyph ellipse {
+      fill: none;
+      stroke-width: 1.2;
+    }
+
+    .branch-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+
+    .branch-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 440px;
+    }
+
+    /* future branches — lighter */
+    .branch.future .branch-name {
+      color: var(--breath);
+      font-style: italic;
+    }
+
+    .branch.future .branch-desc {
+      color: var(--breath);
+    }
+
+    /* ── Invitation ── */
+    .invitation {
+      margin-top: 3.8rem;
+      opacity: 0;
+      animation: arrive 1s ease forwards;
+      animation-delay: 1.8s;
+    }
+
+    .invitation blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--ink);
+      border-left: 2px solid var(--moss);
+      padding-left: 1.2rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .invitation p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 460px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid var(--line);
+      opacity: 0;
+      animation: arrive 1s ease forwards;
+      animation-delay: 2.1s;
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      color: var(--breath);
+      line-height: 1.7;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: color 0.2s;
+    }
+
+    footer a:hover {
+      color: var(--ink);
+    }
+
+    /* ── Animations ── */
+    @keyframes arrive {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes draw-circle {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .page { padding: 3.5rem 1.4rem 5rem; }
+      .branch { gap: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Circle mark -->
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <circle cx="24" cy="24" r="18"/>
+    </svg>
+
+    <!-- Opening -->
+    <section class="opening" aria-labelledby="site-name">
+      <h1 class="site-name" id="site-name">Circles in Motion</h1>
+      <p class="opening-body">
+        A movement practice rooted in circles, rhythm, breath, and return.
+      </p>
+      <p class="opening-body">
+        Every motion extends outward and comes back to center.
+        Energy moves like water — never forced, never trapped, always able to move again.
+      </p>
+    </section>
+
+    <div class="breath-line" aria-hidden="true"></div>
+
+    <!-- Emotional orientation -->
+    <section class="orientation">
+      <p>
+        This is not a performance practice. There is no competition here,
+        no correct body, no prior training required.
+      </p>
+      <p>
+        Many people find that their bodies already know something about circular movement —
+        from dance, from childhood, from the way water moves, from the way grief or joy
+        moves through them when they let it.
+      </p>
+      <p>
+        Whatever pulse feeds your movement, it belongs here.
+      </p>
+    </section>
+
+    <!-- Branches -->
+    <section class="branches" aria-label="Paths within Circles in Motion">
+      <div class="branches-label">Paths within the practice</div>
+
+      <!-- RageDance -->
+      <a class="branch" href="https://jacobo-dm.github.io/RageDance/">
+        <svg class="branch-glyph" viewBox="0 0 36 36" aria-hidden="true">
+          <circle cx="18" cy="18" r="14" stroke="#c0623a" stroke-dasharray="4 2.5"/>
+          <circle cx="18" cy="18" r="7"  stroke="#c0623a" opacity="0.5"/>
+        </svg>
+        <div>
+          <div class="branch-name">RageDance</div>
+          <p class="branch-desc">
+            A circular practice for moving anger, grief, and pressure through the body
+            safely — with rhythm, breath, and return. A strong current within the practice.
+            Presence over intensity. Return over force.
+          </p>
+        </div>
+      </a>
+
+      <!-- Baile de los Círculos -->
+      <a class="branch" href="https://jacobo-dm.github.io/circles-in-motion/branches/baile-de-los-circulos.html">
+        <svg class="branch-glyph" viewBox="0 0 36 36" aria-hidden="true">
+          <ellipse cx="18" cy="18" rx="14" ry="9" stroke="#4a7a6a" transform="rotate(-20 18 18)"/>
+          <ellipse cx="18" cy="18" rx="7"  ry="4"  stroke="#4a7a6a" opacity="0.5" transform="rotate(-20 18 18)"/>
+        </svg>
+        <div>
+          <div class="branch-name">Baile de los Círculos</div>
+          <p class="branch-desc">
+            The same principles held in Spanish language and Latin rhythm.
+            Una práctica de movimiento circular — adaptable, abierta, en crecimiento.
+          </p>
+        </div>
+      </a>
+
+      <!-- Future branches -->
+      <div class="branch future" aria-label="Future branches">
+        <svg class="branch-glyph" viewBox="0 0 36 36" aria-hidden="true">
+          <circle cx="18" cy="18" r="14" stroke="#c8bfb0" stroke-dasharray="2 3"/>
+        </svg>
+        <div>
+          <div class="branch-name">More paths, growing</div>
+          <p class="branch-desc">
+            Gentler sequences, classroom practices, elder forms, and cultural
+            adaptations will emerge over time through dialogue and lived experience.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Invitation -->
+    <section class="invitation">
+      <blockquote>
+        Start with curiosity.<br>
+        Move slowly.<br>
+        Let the circles teach the body.
+      </blockquote>
+      <p>
+        You can begin anywhere. There is no entrance exam, no prerequisite,
+        no moment you must wait for. Just a practice, open and returning —
+        like the motion itself.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        Circles in Motion · developed by <a href="https://github.com/Jacobo-DM">JH Durbin</a>
+        with Elumannín and the braid ·
+        open for study, adaptation, and care ·
+        preserve lineage · practice with care · do not use this work to harm others
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
