@@ -58,5 +58,5 @@ Embodiment remains primary.
 
 ---
 
-**Attribution:** JH Durbin  
+**Attribution:** Jacobo Hernandez Durbin  
 (Additional credits, collaborators, and cultural stewards will be acknowledged as this practice evolves.)# circles-in-motion
