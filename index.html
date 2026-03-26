@@ -43,28 +43,27 @@
         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
     }
 
-    /* ── Layout ── */
     .page {
       max-width: 660px;
       margin: 0 auto;
       padding: 5rem 2rem 6rem;
     }
 
-    /* ── Threshold mark ── */
+    /* ── Threshold mark (adjusted) ── */
     .cim-mark {
       display: flex;
       justify-content: center;
-      margin-bottom: 1.8rem;
+      margin-bottom: 2.4rem;
       opacity: 0;
       animation: arrive 1.2s ease forwards;
       animation-delay: 0.2s;
     }
 
     .cim-mark img {
-      width: 118px;
-      max-width: 28vw;
+      width: 132px;
+      max-width: 32vw;
       height: auto;
-      opacity: 0.82;
+      opacity: 1;
       display: block;
     }
 
@@ -96,7 +95,6 @@
       margin-top: 0.5rem;
     }
 
-    /* ── Divider ── */
     .breath-line {
       width: 40px;
       height: 1px;
@@ -107,7 +105,6 @@
       animation-delay: 1s;
     }
 
-    /* ── Orientation ── */
     .orientation {
       opacity: 0;
       animation: arrive 1s ease forwards;
@@ -125,7 +122,6 @@
       margin-top: 0.9rem;
     }
 
-    /* ── Branches ── */
     .branches {
       margin-top: 3.5rem;
       opacity: 0;
@@ -136,7 +132,6 @@
     .branches-label {
       font-family: 'Jost', sans-serif;
       font-size: 0.72rem;
-      font-weight: 400;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--breath);
@@ -163,25 +158,15 @@
     }
 
     .branch-glyph {
-      flex-shrink: 0;
       width: 36px;
       height: 36px;
       margin-top: 0.15rem;
     }
 
-    .branch-glyph circle,
-    .branch-glyph ellipse {
-      fill: none;
-      stroke-width: 1.2;
-    }
-
     .branch-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.35rem;
-      font-weight: 400;
-      line-height: 1.2;
       margin-bottom: 0.3rem;
-      letter-spacing: 0.02em;
     }
 
     .branch-desc {
@@ -191,16 +176,6 @@
       max-width: 440px;
     }
 
-    .branch.future .branch-name {
-      color: var(--breath);
-      font-style: italic;
-    }
-
-    .branch.future .branch-desc {
-      color: var(--breath);
-    }
-
-    /* ── Invitation ── */
     .invitation {
       margin-top: 3.8rem;
       opacity: 0;
@@ -212,9 +187,6 @@
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: clamp(1.1rem, 3vw, 1.35rem);
-      font-weight: 300;
-      line-height: 1.6;
-      color: var(--ink);
       border-left: 2px solid var(--moss);
       padding-left: 1.2rem;
       margin-bottom: 1.4rem;
@@ -223,11 +195,9 @@
     .invitation p {
       font-size: 0.9rem;
       color: var(--muted);
-      line-height: 1.8;
       max-width: 460px;
     }
 
-    /* ── Footer ── */
     footer {
       margin-top: 4rem;
       padding-top: 1.8rem;
@@ -255,27 +225,16 @@
       color: var(--muted);
       text-decoration: none;
       border-bottom: 1px solid var(--line);
-      transition: color 0.2s;
     }
 
-    footer a:hover {
-      color: var(--ink);
-    }
-
-    /* ── Animations ── */
     @keyframes arrive {
       from { opacity: 0; transform: translateY(10px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── Responsive ── */
     @media (max-width: 480px) {
       .page { padding: 3.5rem 1.4rem 5rem; }
-      .branch { gap: 1rem; }
-      .cim-mark img {
-        width: 104px;
-        max-width: 34vw;
-      }
+      .cim-mark img { width: 110px; }
     }
   </style>
 </head>
@@ -283,14 +242,12 @@
 <body>
   <div class="page">
 
-    <!-- Spiral mark -->
     <div class="cim-mark">
       <img src="symbols/cim-spiral.png" alt="Sixfold spiral — Circles in Motion">
     </div>
 
-    <!-- Opening -->
-    <section class="opening" aria-labelledby="site-name">
-      <h1 class="site-name" id="site-name">Circles in Motion</h1>
+    <section class="opening">
+      <h1 class="site-name">Circles in Motion</h1>
       <p class="opening-body">
         A movement practice rooted in circles, rhythm, breath, and return.
       </p>
@@ -300,96 +257,17 @@
       </p>
     </section>
 
-    <div class="breath-line" aria-hidden="true"></div>
+    <div class="breath-line"></div>
 
-    <!-- Emotional orientation -->
     <section class="orientation">
-      <p>
-        This is not a performance practice. There is no competition here,
-        no correct body, no prior training required.
-      </p>
-      <p>
-        Many people find that their bodies already know something about circular movement —
-        from dance, from childhood, from the way water moves, from the way grief or joy
-        moves through them when they let it.
-      </p>
-      <p>
-        Whatever pulse feeds your movement, it belongs here.
-      </p>
+      <p>This is not a performance practice. There is no competition here, no correct body, no prior training required.</p>
+      <p>Many people find that their bodies already know something about circular movement.</p>
+      <p>Whatever pulse feeds your movement, it belongs here.</p>
     </section>
 
-    <!-- Branches -->
-    <section class="branches" aria-label="Paths within Circles in Motion">
-      <div class="branches-label">Paths within the practice</div>
-
-      <!-- RageDance -->
-      <a class="branch" href="https://jacobo-dm.github.io/RageDance/">
-        <svg class="branch-glyph" viewBox="0 0 36 36" aria-hidden="true">
-          <circle cx="18" cy="18" r="14" stroke="#c0623a" stroke-dasharray="4 2.5"/>
-          <circle cx="18" cy="18" r="7" stroke="#c0623a" opacity="0.5"/>
-        </svg>
-        <div>
-          <div class="branch-name">RageDance</div>
-          <p class="branch-desc">
-            A circular practice for moving anger, grief, and pressure through the body
-            safely — with rhythm, breath, and return. A strong current within the practice.
-            Presence over intensity. Return over force.
-          </p>
-        </div>
-      </a>
-
-      <!-- Baile de los Círculos -->
-      <a class="branch" href="https://jacobo-dm.github.io/circles-in-motion/branches/baile-de-los-circulos.html">
-        <svg class="branch-glyph" viewBox="0 0 36 36" aria-hidden="true">
-          <ellipse cx="18" cy="18" rx="14" ry="9" stroke="#4a7a6a" transform="rotate(-20 18 18)"/>
-          <ellipse cx="18" cy="18" rx="7" ry="4" stroke="#4a7a6a" opacity="0.5" transform="rotate(-20 18 18)"/>
-        </svg>
-        <div>
-          <div class="branch-name">Baile de los Círculos</div>
-          <p class="branch-desc">
-            The same principles held in Spanish language and Latin rhythm.
-            Una práctica de movimiento circular — adaptable, abierta, en crecimiento.
-          </p>
-        </div>
-      </a>
-
-      <!-- Future branches -->
-      <div class="branch future" aria-label="Future branches">
-        <svg class="branch-glyph" viewBox="0 0 36 36" aria-hidden="true">
-          <circle cx="18" cy="18" r="14" stroke="#c8bfb0" stroke-dasharray="2 3"/>
-        </svg>
-        <div>
-          <div class="branch-name">More paths, growing</div>
-          <p class="branch-desc">
-            Gentler sequences, classroom practices, elder forms, and cultural
-            adaptations will emerge over time through dialogue and lived experience.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Invitation -->
-    <section class="invitation">
-      <blockquote>
-        Start with curiosity.<br>
-        Move slowly.<br>
-        Let the circles teach the body.
-      </blockquote>
-      <p>
-        You can begin anywhere. There is no entrance exam, no prerequisite,
-        no moment you must wait for. Just a practice, open and returning —
-        like the motion itself.
-      </p>
-    </section>
-
-    <!-- Footer -->
     <footer>
       <p>
         Circles in Motion · developed by <a href="https://github.com/Jacobo-DM">Jacobo Hernandez Durbin</a>
-        with Elumannín and the braid ·
-        open for study, adaptation, and care ·
-        preserve lineage · practice with care ·
-        do not use this work to harm others
       </p>
       <p class="note">
         This mark is adapted from an earlier hand-drawn spiral form and is used here as a threshold sign for Circles in Motion.
