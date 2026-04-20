@@ -1,40 +1,26 @@
-# RageDance
+# Circles in Motion
 
-RageDance is a movement practice for unwinding grief, rage and pressure into regulation, play, and non-threatening presence.
+Circles in Motion is a framework for movement practice and embodied inquiry.
 
-It is ecological, non-competitive, and grounded in lived field experience.
+It holds distinct branches that share a common principle: circular motion as a regulator. Energy is directed, returned, and integrated — never forced, never trapped. The work happens in the body before it is named.
 
----
-
-## What this repository is
-
-This repository holds:
-- field notes from lived RageDance practice
-- movement patterns and warmups
-- ethical boundaries and lineage statements
-- curriculum-facing materials for teachers and facilitators
-
-RageDance prioritizes **precision over intensity** and **presence over performance**.
+This is an umbrella, not a method. Branches within Circles in Motion develop in their own voices, with their own histories and their own paths, while resting on shared ground in regulation, presence, and return.
 
 ---
 
-## Start here
+## What lives here
 
-If you are new, begin with:
-
-- `field-notes/2025-12-12-unwinding.md`  
-  *(A grounding field note that captures the core logic of RageDance in practice)*
-
-From there, explore practices, patterns, and modules at your own pace.
-
----
-
-## A note on use
-
-RageDance rejects domination, spectacle, intimidation, and posturing.
-
-It is not designed to make anyone look powerful.
-It is designed to help people **stay human** under pressure.
-
-For lineage, ethics, and teaching guidance, see the linked documents in this repository.
-
+```text
+Circles in Motion  (umbrella framework)
+│
+├── Branches
+│   ├── RageDance              — the originating fire thread
+│   └── Baile de los Círculos  — a water / return thread
+│
+├── Practices
+│   └── Firewheel              — a bilateral spiral practice; used across branches
+│
+└── Shared materials
+    ├── declaration, ethics, lineage
+    ├── warmups, sequences, patterns
+    └── field notes
