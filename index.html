@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RageDance · A Flower Road Practice</title>
-  <meta name="description" content="A movement practice for breath, softening, and return. Begin where you are.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Circles in Motion · A Flower Road Movement Commons</title>
+  <meta
+    name="description"
+    content="Circles in Motion is an umbrella framework for circular movement, regulation, presence, adaptation, and return. RageDance is one branch within it."
+  />
 
   <style>
     :root {
-      --clay:      #1c1510;
-      --earth:     #2e2118;
-      --terracotta:#c4623a;
-      --ochre:     #c9963a;
-      --sand:      #e8d9c4;
-      --dust:      #a89070;
-      --fog:       #6a5a4a;
-      --ember:     #d4824a;
-      --pale:      #f2e8d8;
+      --clay: #1c1510;
+      --earth: #2e2118;
+      --deep: #130f0c;
+      --terracotta: #c4623a;
+      --ochre: #c9963a;
+      --sand: #e8d9c4;
+      --dust: #a89070;
+      --fog: #6a5a4a;
+      --ember: #d4824a;
+      --pale: #f2e8d8;
+      --shadow: rgba(0, 0, 0, 0.28);
+
+      --serif: Georgia, "Times New Roman", Times, serif;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", monospace;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { font-size: 18px; }
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
 
     body {
-      background: var(--clay);
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(196, 98, 58, 0.12), transparent 34rem),
+        radial-gradient(circle at bottom right, rgba(201, 150, 58, 0.09), transparent 30rem),
+        var(--clay);
       color: var(--sand);
-      font-family: 'Jost', sans-serif;
+      font-family: var(--sans);
       font-weight: 300;
       line-height: 1.75;
-      min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* ── Drifting circles ── */
+    a {
+      color: inherit;
+    }
+
     .circles-field {
       position: fixed;
       inset: 0;
@@ -48,92 +69,125 @@
     .drift {
       position: absolute;
       border-radius: 50%;
-      border: 1px solid rgba(196, 98, 58, 0.18);
+      border: 1px solid rgba(232, 217, 196, 0.13);
       animation: drift-slow linear infinite;
     }
 
     .drift:nth-child(1) {
-      width: 420px; height: 420px;
-      top: -80px; left: -120px;
-      animation-duration: 38s;
-      border-color: rgba(196, 98, 58, 0.12);
+      width: 460px;
+      height: 460px;
+      top: -120px;
+      left: -160px;
+      animation-duration: 48s;
+      border-color: rgba(196, 98, 58, 0.14);
     }
+
     .drift:nth-child(2) {
-      width: 180px; height: 180px;
-      top: 30%; right: 8%;
-      animation-duration: 52s;
+      width: 220px;
+      height: 220px;
+      top: 22%;
+      right: 8%;
+      animation-duration: 58s;
       animation-direction: reverse;
       border-color: rgba(201, 150, 58, 0.14);
     }
+
     .drift:nth-child(3) {
-      width: 60px; height: 60px;
-      top: 55%; left: 12%;
-      animation-duration: 29s;
-      border-color: rgba(196, 98, 58, 0.2);
+      width: 72px;
+      height: 72px;
+      top: 60%;
+      left: 12%;
+      animation-duration: 31s;
+      border-color: rgba(232, 217, 196, 0.16);
     }
+
     .drift:nth-child(4) {
-      width: 290px; height: 290px;
-      bottom: -60px; right: -80px;
-      animation-duration: 44s;
-      border-color: rgba(201, 150, 58, 0.1);
+      width: 320px;
+      height: 320px;
+      bottom: -100px;
+      right: -90px;
+      animation-duration: 52s;
+      border-color: rgba(196, 98, 58, 0.1);
     }
+
     .drift:nth-child(5) {
-      width: 110px; height: 110px;
-      top: 18%; left: 40%;
-      animation-duration: 61s;
+      width: 130px;
+      height: 130px;
+      top: 13%;
+      left: 44%;
+      animation-duration: 67s;
       animation-direction: reverse;
-      border-color: rgba(196, 98, 58, 0.09);
+      border-color: rgba(201, 150, 58, 0.11);
     }
+
     .drift:nth-child(6) {
-      width: 34px; height: 34px;
-      top: 72%; right: 22%;
-      animation-duration: 23s;
-      border-color: rgba(232, 217, 196, 0.15);
+      width: 40px;
+      height: 40px;
+      top: 75%;
+      right: 24%;
+      animation-duration: 25s;
+      border-color: rgba(232, 217, 196, 0.18);
     }
 
     @keyframes drift-slow {
-      0%   { transform: translate(0, 0) rotate(0deg); }
-      33%  { transform: translate(12px, -18px) rotate(120deg); }
-      66%  { transform: translate(-8px, 10px) rotate(240deg); }
-      100% { transform: translate(0, 0) rotate(360deg); }
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      33% {
+        transform: translate(12px, -18px) rotate(120deg);
+      }
+      66% {
+        transform: translate(-8px, 10px) rotate(240deg);
+      }
+      100% {
+        transform: translate(0, 0) rotate(360deg);
+      }
     }
 
-    /* ── Page layout ── */
     .page {
       position: relative;
       z-index: 1;
-      max-width: 620px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 6rem 2rem 7rem;
+      padding: 5rem 2rem 6rem;
     }
 
-    /* ── Back link ── */
-    .back {
-      display: inline-block;
-      font-size: 0.75rem;
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 5rem;
+      opacity: 0;
+      animation: rise 0.9s ease forwards;
+      animation-delay: 0.1s;
+    }
+
+    .home-link,
+    .small-link {
+      font-size: 0.72rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--fog);
       text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .home-link:hover,
+    .small-link:hover {
+      color: var(--dust);
+    }
+
+    .hero {
+      max-width: 760px;
       margin-bottom: 4rem;
       opacity: 0;
       animation: rise 1s ease forwards;
-      animation-delay: 0.2s;
-      transition: color 0.2s;
-    }
-    .back:hover { color: var(--dust); }
-    .back::before { content: '← '; }
-
-    /* ── Hero ── */
-    .hero {
-      opacity: 0;
-      animation: rise 1.2s ease forwards;
-      animation-delay: 0.5s;
-      margin-bottom: 3.5rem;
+      animation-delay: 0.25s;
     }
 
-    .practice-label {
-      font-size: 0.7rem;
+    .eyebrow {
+      font-size: 0.72rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--fog);
@@ -141,236 +195,298 @@
     }
 
     h1 {
-      font-family: 'Cormorant Upright', serif;
-      font-weight: 300;
-      font-size: clamp(3.8rem, 12vw, 6rem);
-      line-height: 0.92;
-      letter-spacing: 0.06em;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(3.4rem, 10vw, 6.6rem);
+      line-height: 0.94;
+      letter-spacing: 0.035em;
       color: var(--pale);
-      margin-bottom: 1.6rem;
-      /* elongated feel via tracking and tight leading */
+      margin-bottom: 1.5rem;
     }
-
-    /* individual letter breathing */
-    h1 .r { letter-spacing: 0.08em; }
-    h1 .long { display: inline-block; transform: scaleY(1.06); transform-origin: bottom; }
 
     .tagline {
-      font-family: 'Cormorant Garamond', serif;
+      max-width: 590px;
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
       font-style: italic;
-      font-weight: 300;
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
       color: var(--dust);
       line-height: 1.55;
-      max-width: 400px;
     }
 
-    /* ── First breath ── */
-    .first-breath {
+    .threshold-card {
+      max-width: 720px;
+      background: rgba(46, 33, 24, 0.72);
+      border: 1px solid rgba(232, 217, 196, 0.12);
+      box-shadow: 0 22px 70px var(--shadow);
+      padding: 2rem;
+      margin-bottom: 3.5rem;
       opacity: 0;
       animation: rise 1s ease forwards;
-      animation-delay: 1s;
-      background: rgba(196, 98, 58, 0.07);
-      border: 1px solid rgba(196, 98, 58, 0.2);
-      border-radius: 2px;
-      padding: 1.8rem 1.6rem;
-      margin-bottom: 3.5rem;
+      animation-delay: 0.45s;
     }
 
-    .breath-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      margin-bottom: 1rem;
-      opacity: 0.8;
+    .threshold-card p {
+      color: var(--dust);
+      max-width: 650px;
     }
 
-    .breath-steps {
-      list-style: none;
-      counter-reset: breath;
+    .threshold-card p + p {
+      margin-top: 1rem;
     }
 
-    .breath-steps li {
-      counter-increment: breath;
-      display: flex;
-      gap: 1rem;
-      align-items: baseline;
-      font-size: 0.95rem;
+    .threshold-card strong {
       color: var(--sand);
-      padding: 0.45rem 0;
-      border-bottom: 1px solid rgba(196, 98, 58, 0.1);
-      line-height: 1.55;
+      font-weight: 450;
     }
 
-    .breath-steps li:last-child { border-bottom: none; }
-
-    .breath-steps li::before {
-      content: counter(breath);
-      font-family: 'Cormorant Garamond', serif;
+    .field-note {
+      margin-top: 1.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(232, 217, 196, 0.11);
+      font-family: var(--serif);
       font-style: italic;
+      color: var(--sand);
       font-size: 1.1rem;
-      color: var(--terracotta);
-      opacity: 0.7;
-      flex-shrink: 0;
-      width: 1rem;
-      text-align: right;
-    }
-
-    .breath-note {
-      margin-top: 1.1rem;
-      font-size: 0.82rem;
-      color: var(--fog);
-      font-style: italic;
-    }
-
-    /* ── Divider ── */
-    .earth-line {
-      width: 32px;
-      height: 1px;
-      background: var(--fog);
-      margin: 0 0 3rem;
-      opacity: 0;
-      animation: rise 1s ease forwards;
-      animation-delay: 1.3s;
-    }
-
-    /* ── What it is ── */
-    .what-it-is {
-      opacity: 0;
-      animation: rise 1s ease forwards;
-      animation-delay: 1.4s;
-      margin-bottom: 3.5rem;
-    }
-
-    .what-it-is p {
-      font-size: 0.97rem;
-      color: var(--dust);
-      line-height: 1.85;
-      max-width: 500px;
-    }
-
-    .what-it-is p + p { margin-top: 1rem; }
-
-    .what-it-is strong {
-      color: var(--sand);
-      font-weight: 400;
-    }
-
-    /* ── Paths ── */
-    .paths {
-      opacity: 0;
-      animation: rise 1s ease forwards;
-      animation-delay: 1.7s;
-      margin-bottom: 3.5rem;
-    }
-
-    .paths-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--fog);
-      margin-bottom: 1.6rem;
-    }
-
-    .path-row {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-      padding: 1.2rem 0;
-      border-top: 1px solid rgba(106, 90, 74, 0.3);
-      text-decoration: none;
-      color: inherit;
-      transition: opacity 0.2s;
-    }
-
-    .path-row:last-child { border-bottom: 1px solid rgba(106, 90, 74, 0.3); }
-    .path-row:hover { opacity: 0.65; }
-
-    .path-glyph {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      margin-top: 0.2rem;
-      opacity: 0.7;
-    }
-
-    .path-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 300;
-      color: var(--pale);
-      margin-bottom: 0.2rem;
-      letter-spacing: 0.03em;
-    }
-
-    .path-desc {
-      font-size: 0.85rem;
-      color: var(--fog);
       line-height: 1.65;
     }
 
-    /* ── Declaration quote ── */
-    .declaration {
+    .section {
+      margin-bottom: 4rem;
       opacity: 0;
       animation: rise 1s ease forwards;
-      animation-delay: 2s;
-      margin-bottom: 3rem;
     }
 
-    .declaration blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+    .section:nth-of-type(3) {
+      animation-delay: 0.65s;
+    }
+
+    .section:nth-of-type(4) {
+      animation-delay: 0.85s;
+    }
+
+    .section:nth-of-type(5) {
+      animation-delay: 1.05s;
+    }
+
+    .section:nth-of-type(6) {
+      animation-delay: 1.25s;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--fog);
+      margin-bottom: 1.4rem;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      color: var(--pale);
+      font-size: clamp(1.8rem, 4vw, 2.45rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      max-width: 650px;
       color: var(--dust);
-      line-height: 1.7;
+      margin-bottom: 1.6rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      display: block;
+      min-height: 100%;
+      background: rgba(19, 15, 12, 0.46);
+      border: 1px solid rgba(232, 217, 196, 0.12);
+      padding: 1.35rem;
+      color: inherit;
+      text-decoration: none;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      background: rgba(46, 33, 24, 0.78);
+      border-color: rgba(212, 130, 74, 0.38);
+    }
+
+    .card-kicker {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.65rem;
+    }
+
+    .card-title {
+      font-family: var(--serif);
+      color: var(--pale);
+      font-size: 1.35rem;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      color: var(--dust);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1.25rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.34rem 0.62rem;
+      border: 1px solid rgba(232, 217, 196, 0.14);
+      color: var(--dust);
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: rgba(19, 15, 12, 0.38);
+    }
+
+    .practice-list {
+      list-style: none;
+      border-top: 1px solid rgba(232, 217, 196, 0.12);
+    }
+
+    .practice-list li {
+      display: grid;
+      grid-template-columns: 11rem 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(232, 217, 196, 0.12);
+    }
+
+    .practice-name {
+      font-family: var(--serif);
+      color: var(--pale);
+      font-size: 1.15rem;
+    }
+
+    .practice-desc {
+      color: var(--dust);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .quote {
       border-left: 1px solid var(--terracotta);
       padding-left: 1.2rem;
-      opacity: 0.85;
+      margin: 2rem 0 0;
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--dust);
+      font-size: clamp(1.05rem, 2.3vw, 1.25rem);
+      line-height: 1.7;
     }
 
-    /* ── Footer ── */
     footer {
+      margin-top: 4rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid rgba(232, 217, 196, 0.12);
       opacity: 0;
       animation: rise 1s ease forwards;
-      animation-delay: 2.2s;
-      padding-top: 1.6rem;
-      border-top: 1px solid rgba(106, 90, 74, 0.25);
+      animation-delay: 1.45s;
     }
 
     footer p {
-      font-size: 0.75rem;
       color: var(--fog);
+      font-size: 0.78rem;
       line-height: 1.8;
     }
 
     footer a {
       color: var(--dust);
       text-decoration: none;
-      border-bottom: 1px solid rgba(106, 90, 74, 0.3);
-      transition: color 0.2s;
+      border-bottom: 1px solid rgba(168, 144, 112, 0.35);
     }
 
-    footer a:hover { color: var(--sand); }
+    footer a:hover {
+      color: var(--sand);
+    }
 
-    /* ── Animation ── */
     @keyframes rise {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* ── Responsive ── */
-    @media (max-width: 480px) {
-      .page { padding: 4rem 1.4rem 5rem; }
-      h1 { font-size: 3.4rem; }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .topline,
+      .hero,
+      .threshold-card,
+      .section,
+      footer {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      html {
+        font-size: 17px;
+      }
+
+      .page {
+        padding: 3.6rem 1.35rem 5rem;
+      }
+
+      .topline {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 3.6rem;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .practice-list li {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- Drifting circles -->
   <div class="circles-field" aria-hidden="true">
     <div class="drift"></div>
     <div class="drift"></div>
@@ -380,140 +496,278 @@
     <div class="drift"></div>
   </div>
 
-  <div class="page">
+  <main class="page">
+    <nav class="topline" aria-label="Project navigation">
+      <a class="home-link" href="https://jacobo-dm.github.io/Forge/">← The Forge</a>
+      <a class="small-link" href="https://github.com/Jacobo-DM/circles-in-motion">Repository</a>
+    </nav>
 
-    <!-- Back to Circles in Motion -->
-    <a class="back" href="https://jacobo-dm.github.io/circles-in-motion/">Circles in Motion</a>
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="practice-label">A Flower Road Practice</div>
-      <h1>
-        <span class="long">R</span>age<span class="long">D</span>ance
-      </h1>
+    <header class="hero">
+      <div class="eyebrow">A Flower Road Movement Commons</div>
+      <h1>Circles in Motion</h1>
       <p class="tagline">
-        Breath. Softening.<br>
-        A place where strong feeling can move.
+        Circular movement, regulation, presence, adaptation, and return.
       </p>
+    </header>
+
+    <section class="threshold-card" aria-label="What Circles in Motion is">
+      <p>
+        <strong>Circles in Motion is the umbrella.</strong>
+        It holds movement practices that use arcs, spirals, rhythm, breath,
+        balance, and return to help the body listen, regulate, express, and
+        reconnect.
+      </p>
+
+      <p>
+        <strong>RageDance is one branch within Circles in Motion.</strong>
+        It is not the whole. Other branches may be quieter, more playful,
+        more adaptive, more restorative, or more communal.
+      </p>
+
+      <p>
+        This commons begins from a simple premise: movement was never only
+        for performance. It can be a way of tending attention, meeting strong
+        feeling, restoring mobility, and remembering relation.
+      </p>
+
+      <div class="field-note">
+        Begin where you are. Move what can move. Let the circle teach return.
+      </div>
     </section>
 
-    <!-- First breath — something to do right now -->
-    <div class="first-breath" role="region" aria-label="A first breath">
-      <div class="breath-label">Before anything else — a breath</div>
-      <ol class="breath-steps">
-        <li>Stand or sit. Feel the ground beneath you.</li>
-        <li>Inhale slowly through the nose. Let the ribs expand.</li>
-        <li>Exhale through the mouth. Let the jaw unclench.</li>
-        <li>Roll your shoulders forward once, then back. Let them drop.</li>
-        <li>Notice: something has already softened.</li>
-      </ol>
-      <p class="breath-note">That is RageDance. You just began.</p>
-    </div>
+    <section class="section" id="start">
+      <div class="section-label">Start here</div>
+      <h2>Choose the doorway that matches the day.</h2>
+      <p class="section-intro">
+        There is no single correct entrance. Some days ask for fire. Some ask
+        for softness. Some ask for a chair, a small room, a breath, or a
+        slower return.
+      </p>
 
-    <div class="earth-line" aria-hidden="true"></div>
+      <div class="grid">
+        <a class="card" href="https://jacobo-dm.github.io/RageDance/">
+          <div class="card-kicker">Branch</div>
+          <div class="card-title">RageDance</div>
+          <p>
+            A movement practice for strong feeling, breath, softening, and
+            return. Anger is not the enemy. The body is not the enemy.
+          </p>
+        </a>
 
-    <!-- What it is -->
-    <section class="what-it-is">
-      <p>
-        RageDance is a way to move <strong>anger, grief, pressure, and adrenaline</strong>
-        through the body — without harming yourself or others.
-        It is a small-space practice. You can do it on an 18-inch mat,
-        in a bedroom, a corner of a classroom, or under an open sky.
-      </p>
-      <p>
-        The goal is not to get rid of what you feel.
-        The goal is to give it <strong>rhythm, breath, and a clear path through the body</strong>
-        so you can carry it with more steadiness and less harm.
-      </p>
-      <p>
-        No performance. No competition. No correct body.
-        You arrive as you are.
-        The only real requirement is honesty.
-      </p>
+        <a class="card" href="#emerging">
+          <div class="card-kicker">Adaptive module</div>
+          <div class="card-title">CIM on a Chair</div>
+          <p>
+            A seated Circles in Motion pathway for cold days, injury, limited
+            mobility, classrooms, small rooms, and full-cardio adaptation.
+          </p>
+        </a>
+
+        <a class="card" href="#shared-practices">
+          <div class="card-kicker">Shared practice</div>
+          <div class="card-title">Firewheel</div>
+          <p>
+            A provisional spiral practice shared across branches: heat,
+            attention, bilateral rhythm, and return.
+          </p>
+        </a>
+
+        <a class="card" href="#branch-map">
+          <div class="card-kicker">Map</div>
+          <div class="card-title">Branch Map</div>
+          <p>
+            A living map of branches, modules, and practices as they come into
+            clearer form.
+          </p>
+        </a>
+      </div>
     </section>
 
-    <!-- Paths deeper in -->
-    <section class="paths" aria-label="Where to go from here">
-      <div class="paths-label">Where to go from here</div>
+    <section class="section" id="branch-map">
+      <div class="section-label">Branch map</div>
+      <h2>The umbrella is larger than any one practice.</h2>
+      <p class="section-intro">
+        Circles in Motion can hold fire, play, adaptation, classroom use,
+        restorative movement, martial clarity, accessibility, and story.
+        Branches may grow at different speeds.
+      </p>
 
-      <a class="path-row" href="ragedance-primer.html">
-        <svg class="path-glyph" viewBox="0 0 28 28" fill="none">
-          <circle cx="14" cy="14" r="10" stroke="#c4623a" stroke-width="1"/>
-          <circle cx="14" cy="14" r="4"  stroke="#c4623a" stroke-width="1" opacity="0.5"/>
-        </svg>
-        <div>
-          <div class="path-name">The Primer</div>
-          <p class="path-desc">A full practice cycle — 10 to 15 minutes. Good for a first session.</p>
-        </div>
-      </a>
+      <ul class="practice-list">
+        <li>
+          <div class="practice-name">RageDance</div>
+          <div class="practice-desc">
+            The originating fire branch: strong feeling, rhythmic discharge,
+            breath, safety, ethics, and embodied return.
+          </div>
+        </li>
 
-      <a class="path-row" href="warmups.html">
-        <svg class="path-glyph" viewBox="0 0 28 28" fill="none">
-          <circle cx="14" cy="14" r="10" stroke="#c9963a" stroke-width="1" stroke-dasharray="3 2"/>
-        </svg>
-        <div>
-          <div class="path-name">Warm-Ups</div>
-          <p class="path-desc">Simple movements to wake the joints and nervous system. Begin here if the full cycle feels like too much.</p>
-        </div>
-      </a>
+        <li>
+          <div class="practice-name">Baile de los Círculos</div>
+          <div class="practice-desc">
+            A branch-name held for Spanish-language, communal, and culturally
+            responsive forms of circular movement practice.
+          </div>
+        </li>
 
-      <a class="path-row" href="declaration.html">
-        <svg class="path-glyph" viewBox="0 0 28 28" fill="none">
-          <circle cx="14" cy="14" r="10" stroke="#a89070" stroke-width="1"/>
-          <line x1="9" y1="14" x2="19" y2="14" stroke="#a89070" stroke-width="1" opacity="0.6"/>
-        </svg>
-        <div>
-          <div class="path-name">The Declaration</div>
-          <p class="path-desc">What this practice stands for and what it refuses. The ethics of the lineage.</p>
-        </div>
-      </a>
+        <li>
+          <div class="practice-name">CIM on a Chair</div>
+          <div class="practice-desc">
+            An emerging seated module: adaptive, accessible, and still capable
+            of full cardio. A reminder that movement is not confined to
+            standing, jumping, or performing.
+          </div>
+        </li>
 
-      <a class="path-row" href="lineage.html">
-        <svg class="path-glyph" viewBox="0 0 28 28" fill="none">
-          <circle cx="14" cy="14" r="10" stroke="#a89070" stroke-width="1" stroke-dasharray="1.5 3"/>
-        </svg>
-        <div>
-          <div class="path-name">Lineage</div>
-          <p class="path-desc">Where RageDance comes from — the lived contexts, traditions, and unnamed teachers whose wisdom moves through it.</p>
-        </div>
-      </a>
+        <li>
+          <div class="practice-name">Winter Sequence</div>
+          <div class="practice-desc">
+            A possible cold-weather pathway for small spaces, limited warmth,
+            low energy, and careful ignition.
+          </div>
+        </li>
 
-      <a class="path-row" href="ragedance-teachers.html">
-        <svg class="path-glyph" viewBox="0 0 28 28" fill="none">
-          <circle cx="14" cy="14" r="10" stroke="#c4623a" stroke-width="1" opacity="0.6"/>
-          <circle cx="14" cy="14" r="6"  stroke="#c4623a" stroke-width="1" stroke-dasharray="2 2" opacity="0.4"/>
-        </svg>
-        <div>
-          <div class="path-name">For Teachers</div>
-          <p class="path-desc">Guidance for facilitators bringing RageDance into classrooms, community spaces, or therapeutic contexts.</p>
-        </div>
-      </a>
+        <li>
+          <div class="practice-name">Elephant Circle</div>
+          <div class="practice-desc">
+            A grounding circle practice connected to classroom presence,
+            group rhythm, and collective regulation.
+          </div>
+        </li>
 
+        <li>
+          <div class="practice-name">Double Arc Standing</div>
+          <div class="practice-desc">
+            A possible standing form for balance, bilateral awareness, and
+            counter-turning arcs.
+          </div>
+        </li>
+      </ul>
     </section>
 
-    <!-- Declaration quote -->
-    <div class="declaration">
-      <blockquote>
-        The body is never the enemy.<br>
-        Anger is never the enemy.<br>
-        Fear is never the enemy.<br>
-        All are messengers.<br>
-        RageDance is how we learn to listen<br>
-        without being ruled.
+    <section class="section" id="shared-practices">
+      <div class="section-label">Shared principles</div>
+      <h2>What belongs across the branches?</h2>
+      <p class="section-intro">
+        These principles are not rules of performance. They are safety,
+        attention, and design anchors for any practice held under Circles in
+        Motion.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-kicker">01</div>
+          <div class="card-title">Clarity before intensity</div>
+          <p>
+            If the movement grows faster or stronger, attention must deepen.
+            Speed is never a substitute for presence.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-kicker">02</div>
+          <div class="card-title">Adaptation is discovery</div>
+          <p>
+            A chair, wall, cane, floor, doorway, or smaller range of motion
+            does not make the practice lesser. It reveals another doorway.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-kicker">03</div>
+          <div class="card-title">The circle teaches return</div>
+          <p>
+            Arcs, spirals, turns, pauses, and counter-turns help the body
+            notice where it is, where it has been, and how it may come back.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-kicker">04</div>
+          <div class="card-title">No correct body</div>
+          <p>
+            The practice must not become another system of shame. Begin with
+            the body present, not the body imagined.
+          </p>
+        </div>
+      </div>
+
+      <blockquote class="quote">
+        Movement was never only for performance. The body may also be a field
+        of listening, shelter, warning, play, repair, and return.
       </blockquote>
-    </div>
+    </section>
 
-    <!-- Footer -->
+    <section class="section" id="emerging">
+      <div class="section-label">Emerging modules</div>
+      <h2>CIM on a Chair belongs here.</h2>
+      <p class="section-intro">
+        Chair-based Circles in Motion began as a practical response to cold,
+        constraint, and the need to keep moving when full standing practice was
+        not the right doorway. It can still be vigorous. It can still be full
+        cardio. It can still be beautiful.
+      </p>
+
+      <div class="threshold-card">
+        <p>
+          This module may become an accessibility bridge for injury, limited
+          mobility, classroom settings, elder practice, small rooms, winter
+          practice, and Regenerative Gaming story-work.
+        </p>
+
+        <p>
+          Its deeper teaching is simple:
+          <strong>the wing was never only for flying.</strong>
+        </p>
+
+        <div class="pill-row" aria-label="Related threads">
+          <span class="pill">Accessibility</span>
+          <span class="pill">Adaptation</span>
+          <span class="pill">Cold-weather practice</span>
+          <span class="pill">Regenerative Gaming</span>
+          <span class="pill">DiscoveryDome</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="commons">
+      <div class="section-label">Commons ethic</div>
+      <h2>This is a practice commons, not a performance brand.</h2>
+      <p class="section-intro">
+        Circles in Motion is part of the Flower Road / Forge ecosystem. It
+        should remain local, adaptable, repairable, and careful with lineage,
+        embodiment, consent, and use.
+      </p>
+
+      <div class="grid">
+        <a class="card" href="https://jacobo-dm.github.io/Forge/">
+          <div class="card-kicker">Ecosystem</div>
+          <div class="card-title">The Forge</div>
+          <p>
+            The wider commons where living work is kept warm: root notes,
+            seeds, tools, declarations, and unfinished metal still glowing.
+          </p>
+        </a>
+
+        <a class="card" href="https://jacobo-dm.github.io/RageDance/">
+          <div class="card-kicker">Branch</div>
+          <div class="card-title">RageDance</div>
+          <p>
+            The fire branch currently furthest along: declaration, primer,
+            warm-ups, teacher guidance, lineage, and license.
+          </p>
+        </a>
+      </div>
+    </section>
+
     <footer>
       <p>
-        RageDance · A Flower Road Practice · developed by
+        Circles in Motion · A Flower Road movement commons · developed by
         <a href="https://github.com/Jacobo-DM">JH Durbin</a>
         with Elumannín and the braid ·
-        <a href="ragedance-license.html">commons license</a> ·
-        part of <a href="https://jacobo-dm.github.io/circles-in-motion/">Circles in Motion</a>
+        <a href="https://github.com/Jacobo-DM/circles-in-motion">source repository</a>
+        · RageDance is one branch, not the whole.
       </p>
     </footer>
-
-  </div>
+  </main>
 </body>
 </html>
