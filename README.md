@@ -23,7 +23,8 @@ Circles in Motion  (umbrella framework)
 └── Shared materials
     ├── declaration, ethics, lineage
     ├── warmups, sequences, patterns
-    └── field notes
+    ├── field notes
+    └── seeds
 ````
 
 **RageDance** transforms emotional intensity — grief, rage, pressure — into circular flow without domination or collapse. Its emphasis is not aggression; it is return.
@@ -34,7 +35,7 @@ Each branch has its own history, language, and development path. They are not va
 
 **Firewheel** is a bilateral spiral practice drawn from live sessions. It is held here as exploratory, usable across branches rather than belonging to one.
 
-Additional warm-ups, sequences, patterns, and field notes are shared as they become ready. Materials evolve through use.
+Additional warm-ups, sequences, patterns, field notes, and seed notes are shared as they become ready. Materials evolve through use.
 
 ---
 
@@ -63,6 +64,7 @@ No single entry is primary. Start where you are.
 * For **Baile de los Círculos**, see [`branches/baile-de-los-circulos.md`](branches/baile-de-los-circulos.md).
 * For a specific practice, see [`practices/firewheel.md`](practices/firewheel.md).
 * For ethical ground and lineage, see [`ethics.html`](ethics.html), [`declaration.html`](declaration.html), and [`lineage.html`](lineage.html).
+* For origin-material held as seed, see [`seeds/the-trail-before-the-form.html`](seeds/the-trail-before-the-form.html).
 
 If you are unsure where to start, begin with a field note. The work makes more sense in contact than in description.
 

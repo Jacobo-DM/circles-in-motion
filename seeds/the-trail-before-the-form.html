@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Trail Before the Form — Circles in Motion Seed Note</title>
+  <meta name="description" content="A Circles in Motion seed note preserving early materials of trace, pressure, water, language, music, restraint, and embodied attention.">
+  <style>
+    :root {
+      --bg: #f7f3ea;
+      --paper: #fffdf7;
+      --ink: #24211c;
+      --muted: #5d554b;
+      --line: #d8ccba;
+      --soft: #eee6d8;
+      --mark: #3b3b3b;
+      --shadow: 0 1px 1px rgba(0,0,0,.04), 0 12px 36px rgba(0,0,0,.08);
+      --max: 850px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(255,255,255,.55), transparent 36%),
+        linear-gradient(180deg, var(--bg), #efe7d8 100%);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.62;
+    }
+
+    main {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 2rem auto 4rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header {
+      padding: clamp(2rem, 7vw, 4.5rem) clamp(1.25rem, 5vw, 4rem) 2rem;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(216,204,186,.5), rgba(255,253,247,.2)),
+        var(--paper);
+    }
+
+    .eyebrow {
+      margin: 0 0 .85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 4.3rem);
+      line-height: .98;
+      letter-spacing: -.045em;
+      max-width: 12ch;
+    }
+
+    .subtitle {
+      margin: 1.2rem 0 0;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.22rem);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.5rem;
+    }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.5);
+      border-radius: 999px;
+      padding: .38rem .72rem;
+      font-size: .92rem;
+    }
+
+    nav a:focus,
+    nav a:hover {
+      outline: 2px solid var(--mark);
+      outline-offset: 2px;
+    }
+
+    section {
+      padding: clamp(1.5rem, 5vw, 3.2rem) clamp(1.25rem, 5vw, 4rem);
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.45rem, 4vw, 2.15rem);
+      line-height: 1.1;
+      letter-spacing: -.02em;
+    }
+
+    h3 {
+      margin: 1.6rem 0 .45rem;
+      font-size: 1.05rem;
+      letter-spacing: .01em;
+    }
+
+    p { margin: 0 0 1rem; }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: .75rem;
+      margin-top: 1.5rem;
+    }
+
+    .meta div,
+    .card,
+    .guardrail,
+    blockquote {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      border-radius: 16px;
+      padding: 1rem;
+    }
+
+    .meta strong {
+      display: block;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: .25rem;
+    }
+
+    blockquote {
+      margin: 1.25rem 0;
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      line-height: 1.35;
+      background: #f2eadc;
+    }
+
+    blockquote p { margin-bottom: .65rem; }
+    blockquote p:last-child { margin-bottom: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: .8rem;
+      margin: 1.25rem 0 0;
+    }
+
+    .card h3 { margin-top: 0; }
+    .card p { color: var(--muted); }
+
+    .list {
+      padding-left: 1.15rem;
+      margin: .5rem 0 0;
+    }
+
+    .list li { margin: .35rem 0; }
+
+    .callout {
+      border-left: 6px solid var(--mark);
+      padding: 1rem 1rem 1rem 1.1rem;
+      margin: 1.3rem 0;
+      background: #faf4e9;
+    }
+
+    .guardrail {
+      background: #f3efe7;
+      border-style: dashed;
+    }
+
+    .small {
+      font-size: .94rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 1.25rem clamp(1.25rem, 5vw, 4rem) 2rem;
+      color: var(--muted);
+      font-size: .92rem;
+      border-top: 1px solid var(--line);
+      background: #f5eee2;
+    }
+
+    @media print {
+      body { background: #fff; }
+      main { box-shadow: none; margin: 0; width: 100%; border: 0; }
+      nav { display: none; }
+      section, header, footer { padding-left: 0; padding-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Circles in Motion · Seed Note</p>
+      <h1>The Trail Before the Form</h1>
+      <p class="subtitle">A repo-safe note preserving early materials of trace, pressure, water, language, music, restraint, and embodied attention.</p>
+      <nav aria-label="Page sections">
+        <a href="#posture">Posture</a>
+        <a href="#materials">Early materials</a>
+        <a href="#restraint">Held fire</a>
+        <a href="#language">Language & music</a>
+        <a href="#guardrails">Guardrails</a>
+      </nav>
+      <div class="meta" aria-label="Seed metadata">
+        <div><strong>Status</strong>Seed note, not doctrine</div>
+        <div><strong>Root home</strong>Circles in Motion</div>
+        <div><strong>Privacy posture</strong>No personal names</div>
+        <div><strong>Cross-links</strong>RageDance · Rarako · DiscoveryMode · Flower Road</div>
+      </div>
+    </header>
+
+    <section id="posture">
+      <h2>Privacy posture</h2>
+      <p>This note preserves origin material without turning personal memory into authority. The memory is offered as a seed, not proof, doctrine, or ownership claim.</p>
+      <p>Names are intentionally omitted. The project steward appears only as a witness to early materials that later helped shape Circles in Motion.</p>
+      <div class="callout">
+        <p><strong>Working distinction:</strong> Before it had a name, it was Circles in Motion. RageDance is a later branch of this larger field: a heat-bearing form that may arise under pressure, grief, anger, joy, rupture, defense, or the need to re-center.</p>
+      </div>
+    </section>
+
+    <section id="materials">
+      <h2>Air, skin, water</h2>
+      <p>One early memory behind Circles in Motion is of a child drawing spirals, loops, vines, curls, and trails in the air. The fascination was not only with the visible pattern, but with the trail: the shadowy layer between where the hand was and where the hand is.</p>
+      <p>There was also skin: fingers pressing into the body, watching how the surface moved under pressure. There was curiosity, soothing, wonder, and a child’s quiet testing of the boundary of the body.</p>
+      <p>And there was water. Long stretches in the bath became a field of observation: cupped water, movement, spirals, drops, currents, and the way form appeared and disappeared. The hand was not only making shapes. It was learning from water.</p>
+
+      <div class="grid" aria-label="Early trace materials">
+        <article class="card">
+          <h3>Air</h3>
+          <p>Gesture, afterimage, trail, and the hand moving through space.</p>
+        </article>
+        <article class="card">
+          <h3>Skin</h3>
+          <p>Pressure, response, surface, boundary, and the body as landscape.</p>
+        </article>
+        <article class="card">
+          <h3>Water</h3>
+          <p>Flow, spiral, dispersal, drops, return, and the play of energy and form.</p>
+        </article>
+      </div>
+
+      <blockquote>
+        <p>Before RageDance, there was Circles in Motion.</p>
+        <p>Before Circles in Motion had a name, there was trace.</p>
+        <p>Before trace had language, there was a child watching air, skin, and water answer the hand.</p>
+      </blockquote>
+    </section>
+
+    <section id="restraint">
+      <h2>Held fire</h2>
+      <p>Another early influence came through aikido. A gentle teacher at the Berkeley YMCA planted an ethic that may have seemed simple to a casual observer but was profound for a child.</p>
+      <blockquote>
+        <p>The capacity for violence does not equate to the use of violence.</p>
+        <p>Fire need not burn. It can be held.</p>
+      </blockquote>
+      <p>This ethos belongs close to the heart of Circles in Motion. The work is not built around domination, display, or testing power against another body. Embodied skill should deepen restraint, not feed the desire to prove force.</p>
+    </section>
+
+    <section id="language">
+      <h2>Language and music also move</h2>
+      <p>Later, language revealed itself as another kind of water. In a small Sacramento gallery, a bilingual edition of Neruda’s <em>100 Love Sonnets</em> opened a threshold: English and Spanish facing one another, not as fixed containers, but as currents. Something in language was unlocked, uncaged, untamed.</p>
+      <p>Music opened another gate. A street-found cassette held Orquesta Andalucía on one side and <em>Sgt. Pepper’s Lonely Hearts Club Band</em> on the other: a double threshold of Andalusian, Arabic, Spanish, psychedelic, theatrical, and dream-making currents. Years later, the album was identified as work by El Lebrijano. The first song carried a call that resonated like a bell.</p>
+      <p>At sixteen, another threshold arrived through “Visions of Johanna”: song as image, electricity, boundary, trace, and word-force. Not merely a message, but charge.</p>
+
+      <div class="callout">
+        <p><strong>Core line:</strong> The hand followed water. The mind followed language. The whole body followed song.</p>
+      </div>
+
+      <p>These moments are not presented as proof of a single origin. They are preserved as related materials: language as current, music as trace-language, and meaning as something that moves before it hardens into explanation.</p>
+    </section>
+
+    <section id="guardrails">
+      <h2>Guardrails</h2>
+      <div class="guardrail">
+        <p><strong>Do not overclaim continuity.</strong> A child drawing spirals in the air is not automatically practicing a named adult form. The memory matters because it reveals early material, not because it proves an unbroken lineage.</p>
+        <p><strong>Do not reduce the work to anger.</strong> RageDance grew from Circles in Motion, but Circles in Motion is broader than rage: trace, pressure, flow, attention, restraint, transformation, and return.</p>
+        <p><strong>Do not make personal memory into public authority.</strong> The note offers a seed, not a claim of ownership over the field.</p>
+      </div>
+      <h3>Careful phrasing</h3>
+      <ul class="list">
+        <li>Childhood held the trace-language.</li>
+        <li>Circles in Motion gave it a field.</li>
+        <li>RageDance became one branch when heat needed somewhere honest to go.</li>
+        <li>The trail is the body remembering motion before language catches up.</li>
+        <li>Fire need not burn. It can be held.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Prepared as a lightweight HTML seed page using system fonts only. No external scripts, fonts, analytics, embeds, or images.</p>
+    </footer>
+  </main>
+</body>
+</html>
